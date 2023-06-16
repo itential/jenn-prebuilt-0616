@@ -1,7 +1,7 @@
 {
   "name": "@local/concat-two-strings-prebuilt",
   "author": "Itential Automation Platform",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is my first prebuilt that's pushed to Azure",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
