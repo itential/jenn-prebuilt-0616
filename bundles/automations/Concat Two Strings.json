@@ -1,0 +1,34 @@
+{
+  "_id": "64650ee981a6f5025951bc54",
+  "name": "Concat Two Strings",
+  "description": "",
+  "componentName": "concat-two-strings",
+  "componentType": "workflows",
+  "gbac": {
+    "write": [],
+    "read": []
+  },
+  "created": "2023-05-17T17:29:13.352Z",
+  "createdBy": "admin@pronghorn",
+  "lastUpdated": "2023-05-17T17:29:13.352Z",
+  "lastUpdatedBy": "admin@pronghorn",
+  "triggers": [
+    {
+      "_id": "64650ee981a6f5025951bc55",
+      "name": "Manual Trigger",
+      "type": "manual",
+      "enabled": true,
+      "actionType": "automations",
+      "actionId": "64650ee981a6f5025951bc54",
+      "description": "",
+      "formId": "concat-two-strings-form",
+      "formData": null,
+      "formSchemaHash": "c21cfea430342258c386c92124582add253b34735979bc79408d67f224d3042c",
+      "created": "2023-05-17T17:29:13.846Z",
+      "createdBy": "admin@pronghorn",
+      "lastUpdated": "2023-05-17T17:29:13.846Z",
+      "lastUpdatedBy": "admin@pronghorn",
+      "migrationVersion": 2
+    }
+  ]
+}

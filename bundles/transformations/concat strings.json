@@ -1,0 +1,103 @@
+{
+  "_id": "63c581f1c204ad01c1b03507",
+  "name": "concat strings",
+  "description": "",
+  "incoming": [
+    {
+      "$id": "str2",
+      "type": "string"
+    },
+    {
+      "$id": "str1",
+      "type": "string"
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "combinedString",
+      "type": "string"
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "type": "method",
+      "library": "String",
+      "method": "concat",
+      "args": [
+        null,
+        null
+      ],
+      "view": {
+        "row": 1,
+        "col": 2
+      },
+      "context": "#"
+    },
+    {
+      "id": 2,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "str2",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/0/value"
+      },
+      "context": "#"
+    },
+    {
+      "id": 3,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "str1",
+        "ptr": ""
+      },
+      "to": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/args/1/value"
+      },
+      "context": "#"
+    },
+    {
+      "id": 4,
+      "type": "assign",
+      "from": {
+        "location": "method",
+        "name": 1,
+        "ptr": "/return"
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "combinedString",
+        "ptr": ""
+      },
+      "context": "#"
+    }
+  ],
+  "functions": [],
+  "comments": [],
+  "view": {
+    "col": 3,
+    "row": 5
+  },
+  "created": "2023-01-16T16:57:21.662Z",
+  "createdBy": {
+    "_id": "63c57e1faed840e9c6bb56b2",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2023-01-19T14:37:40.560Z",
+  "lastUpdatedBy": {
+    "_id": "63c57e1faed840e9c6bb56b2",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "3.23.3-2022.1.12",
+  "tags": []
+}

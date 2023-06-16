@@ -1,0 +1,89 @@
+{
+  "bundleName": "@local/concat-two-strings-prebuilt",
+  "version": "0.0.1",
+  "fingerprint": "648c59ee05b974064cd350c9",
+  "createdEpoch": "1686919662650",
+  "artifacts": [
+    {
+      "id": "Concat Two Strings",
+      "name": "Concat Two Strings",
+      "type": "automation",
+      "location": "/bundles/automations/Concat Two Strings.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "concat-two-strings",
+      "name": "concat-two-strings",
+      "type": "workflow",
+      "location": "/bundles/workflows/concat-two-strings.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "all-components-workflow",
+      "name": "all-components-workflow",
+      "type": "workflow",
+      "location": "/bundles/workflows/all-components-workflow.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "concat-two-strings-form",
+      "name": "concat-two-strings-form",
+      "type": "json-forms",
+      "location": "/bundles/json_forms/concat-two-strings-form.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "cisco_asa_show_name",
+      "name": "cisco_asa_show_name",
+      "type": "template",
+      "location": "/bundles/templates/cisco_asa_show_name.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "simple-template",
+      "name": "simple-template",
+      "type": "mop-template",
+      "location": "/bundles/mop_templates/simple-template.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "simple-gc",
+      "name": "simple-gc",
+      "type": "golden-config",
+      "location": "/bundles/ucm_golden_configs/simple-gc.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "63c581f1c204ad01c1b03507",
+      "name": "concat strings",
+      "type": "transformation",
+      "location": "/bundles/transformations/concat strings.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "63c6f99dc204ad01c1b03509",
+      "name": "Simple JST",
+      "type": "transformation",
+      "location": "/bundles/transformations/Simple JST.json",
+      "properties": {
+        "entryPoint": false
+      }
+    }
+  ]
+}

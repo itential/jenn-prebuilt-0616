@@ -1,0 +1,70 @@
+{
+  "id": "646505b787a15301f80b498d",
+  "created": "2023-05-17T16:49:59.576Z",
+  "createdBy": "admin@pronghorn",
+  "lastUpdated": "2023-05-17T17:30:37.448Z",
+  "lastUpdatedBy": "admin@pronghorn",
+  "name": "concat-two-strings-form",
+  "description": null,
+  "struct": {
+    "type": "object",
+    "description": "",
+    "items": [
+      {
+        "nodeId": "b69e4ae9-4d83-48c5-bbe9-d628d69177f5",
+        "type": "string",
+        "title": "str1",
+        "description": "",
+        "placeholder": "Enter text",
+        "required": false,
+        "readOnly": false,
+        "binding": false,
+        "rel": "item",
+        "targetPointer": "/default"
+      },
+      {
+        "nodeId": "54d6c365-9097-4b7f-8ccc-cdd6d1b9965f",
+        "type": "string",
+        "title": "str2",
+        "description": "",
+        "placeholder": "Enter text",
+        "required": false,
+        "readOnly": false,
+        "binding": false,
+        "rel": "item",
+        "targetPointer": "/default"
+      }
+    ]
+  },
+  "schema": {
+    "title": "concat-two-strings-form",
+    "description": "",
+    "type": "object",
+    "required": [],
+    "properties": {
+      "str1": {
+        "type": "string",
+        "title": "str1",
+        "_id": "/properties/str1",
+        "description": ""
+      },
+      "str2": {
+        "type": "string",
+        "title": "str2",
+        "_id": "/properties/str2",
+        "description": ""
+      }
+    }
+  },
+  "uiSchema": {
+    "str1": {
+      "ui:placeholder": "Enter text"
+    },
+    "str2": {
+      "ui:placeholder": "Enter text"
+    }
+  },
+  "bindingSchema": {},
+  "validationSchema": {},
+  "version": "2020.1"
+}

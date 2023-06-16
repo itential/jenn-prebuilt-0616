@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "data": [
+    {
+      "_id": "63cb0846d2db82016972474f",
+      "name": "simple-gc",
+      "treeId": "63cb0846d2db82016972474e",
+      "version": "initial",
+      "deviceType": "a10-acos",
+      "root": {
+        "name": "base",
+        "attributes": {
+          "devices": [],
+          "remediationWorkflow": null,
+          "configId": "63cb0846d2db82016972474d",
+          "export": {
+            "_id": "63cb0846d2db82016972474d",
+            "deviceType": "a10-acos",
+            "lines": [],
+            "template": "",
+            "created": "2023-01-20T21:31:49.772Z",
+            "createdBy": "63c57e1faed840e9c6bb56b2",
+            "lastUpdated": "2023-01-20T21:31:49.772Z",
+            "lastUpdatedBy": "63c57e1faed840e9c6bb56b2"
+          }
+        },
+        "children": []
+      },
+      "created": "2023-01-20T21:31:49.771Z",
+      "createdBy": "63c57e1faed840e9c6bb56b2",
+      "lastUpdated": "2023-01-20T21:31:49.771Z",
+      "lastUpdatedBy": "63c57e1faed840e9c6bb56b2",
+      "gbac": {
+        "read": [],
+        "write": []
+      },
+      "variables": {},
+      "tags": []
+    }
+  ]
+}

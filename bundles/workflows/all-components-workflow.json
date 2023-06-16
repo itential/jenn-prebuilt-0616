@@ -1,0 +1,245 @@
+{
+  "name": "all-components-workflow",
+  "type": "automation",
+  "tasks": {
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": 0,
+      "y": 0.5
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": 1,
+      "y": 0.5
+    },
+    "6d19": {
+      "name": "RunCommandTemplate",
+      "canvasName": "RunCommandTemplate",
+      "summary": "Run Command Template",
+      "description": "Run a Command Template against devices.",
+      "location": "Application",
+      "locationType": null,
+      "app": "MOP",
+      "type": "automatic",
+      "displayName": "MOP",
+      "variables": {
+        "incoming": {
+          "template": "simple-template",
+          "variables": {},
+          "devices": [
+            "device1"
+          ]
+        },
+        "outgoing": {
+          "mop_template_results": null
+        },
+        "error": "",
+        "decorators": []
+      },
+      "deprecated": false,
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.2336911643270025,
+      "y": 0.49944258639910816,
+      "scheduled": false
+    },
+    "70c6": {
+      "name": "transformation",
+      "canvasName": "transformation",
+      "summary": "Simple JST",
+      "description": "Perform a JSON Transformation using the JST library.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "tr_id": "63c6f99dc204ad01c1b03509",
+          "variableMap": {
+            "input": ""
+          },
+          "options": {
+            "extractOutput": true,
+            "validateIncoming": true,
+            "revertToDefaultValue": true
+          }
+        },
+        "outgoing": {
+          "output1": null
+        },
+        "decorators": []
+      },
+      "deprecated": false,
+      "groups": [],
+      "x": 0.4004954582989265,
+      "y": 0.49944258639910816,
+      "task_name": "Simple JST",
+      "retrySettings": null
+    },
+    "788c": {
+      "name": "renderJinja2",
+      "canvasName": "renderJinja2",
+      "summary": "Renders a jinja2 template.",
+      "description": "Takes a jinja2 template a renders output text.",
+      "location": "Application",
+      "locationType": null,
+      "app": "ConfigurationManager",
+      "type": "automatic",
+      "displayName": "ConfigurationManager",
+      "variables": {
+        "incoming": {
+          "template": "simple-jinja",
+          "variables": {},
+          "options": {}
+        },
+        "outgoing": {
+          "results": null
+        },
+        "error": "",
+        "decorators": []
+      },
+      "deprecated": false,
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.5656482246077622,
+      "y": 0.49944258639910816,
+      "scheduled": false
+    },
+    "bac1": {
+      "name": "applyTemplate",
+      "canvasName": "applyTemplate",
+      "summary": "Apply a template to text",
+      "description": "Apply a template to parse text",
+      "location": "Application",
+      "locationType": null,
+      "app": "TemplateBuilder",
+      "type": "automatic",
+      "displayName": "TemplateBuilder",
+      "variables": {
+        "incoming": {
+          "text": "name 10.1.1.1 server\\nname 10.1.1.10 server1\\nname 10.1.10.1 server-1\\nname 10.1.1.1 server_1\\nname 10.10.1.1 server_web\\nname 10.1.10.10 server-db\\nname 10.10.1.10 server_web1\\nname 10.10.10.10 server-web1\\nname 10.1.1.100 a1server\\nname 10.1.100.100 1-server\\nname 10.100.1.100 1_server\\nname 10.100.100.100 server2\\n",
+          "template": "cisco_asa_show_name"
+        },
+        "outgoing": {
+          "parsed": null
+        },
+        "error": "",
+        "decorators": []
+      },
+      "deprecated": false,
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.7341040462427746,
+      "y": 0.48717948717948717,
+      "scheduled": false
+    },
+    "2c7d": {
+      "name": "runComplianceForTree",
+      "canvasName": "runComplianceForTree",
+      "summary": "Run Compliance Reports (Tree)",
+      "description": "Begin a compliance report run for a Golden Config tree.",
+      "location": "Application",
+      "locationType": null,
+      "app": "ConfigurationManager",
+      "type": "automatic",
+      "displayName": "ConfigurationManager",
+      "variables": {
+        "incoming": {
+          "treeId": "63cb0846d2db82016972474e",
+          "version": "initial",
+          "variables": "",
+          "grading": ""
+        },
+        "outgoing": {
+          "runComplianceBatchResult": null
+        },
+        "error": "",
+        "decorators": []
+      },
+      "deprecated": false,
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.8967795210569777,
+      "y": 0.5016722408026756,
+      "scheduled": false
+    }
+  },
+  "transitions": {
+    "workflow_start": {
+      "6d19": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "6d19": {
+      "70c6": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "70c6": {
+      "788c": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "788c": {
+      "bac1": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "bac1": {
+      "2c7d": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "2c7d": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    }
+  },
+  "font_size": 12,
+  "last_updated": "2023-05-17T18:15:42.296Z",
+  "last_updated_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false
+  },
+  "lastUpdatedVersion": "5.44.64-2022.1.27.0",
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      }
+    }
+  },
+  "created": "2023-01-20T21:24:14.731Z",
+  "created_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false
+  },
+  "createdVersion": "5.44.64-2022.1.25.0",
+  "tags": [],
+  "groups": [],
+  "migrationVersion": 1
+}

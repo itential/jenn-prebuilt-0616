@@ -1,0 +1,234 @@
+{
+  "created": "2022-12-08T15:33:10.144Z",
+  "createdVersion": "5.40.5-2021.1.109.0",
+  "created_by": {
+    "provenance": "CloudAAA",
+    "username": "jenn.lu@itential.com",
+    "firstname": "Jenn",
+    "inactive": true
+  },
+  "font_size": 12,
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "formData": {
+        "title": "obj",
+        "type": "object",
+        "properties": {},
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      }
+    },
+    "required": [
+      "formData"
+    ]
+  },
+  "lastUpdatedVersion": "5.44.64-2022.1.27.0",
+  "last_updated": "2023-05-18T20:45:08.817Z",
+  "last_updated_by": {
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn",
+    "firstname": "admin",
+    "inactive": false
+  },
+  "name": "concat-two-strings",
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "formData": {
+        "title": "obj",
+        "type": "object",
+        "properties": {},
+        "examples": [
+          {
+            "name": "value"
+          }
+        ]
+      },
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      }
+    }
+  },
+  "preAutomationTime": 0,
+  "sla": 0,
+  "tasks": {
+    "9635": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Get String 2",
+      "description": "Get string 2",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "str2",
+          "obj": "$var.job.formData"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": "",
+        "decorators": []
+      },
+      "deprecated": false,
+      "groups": [],
+      "x": 0.28011404133998574,
+      "y": 0.504907306434024,
+      "scheduled": false
+    },
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "x": 0,
+      "y": 0.5
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "x": 1.0192444761225945,
+      "y": 0.5081788440567067
+    },
+    "25a": {
+      "name": "stringConcat",
+      "canvasName": "concat",
+      "summary": "Concatenates strings together.",
+      "description": "Concatenates a string with a second string(s). The second parameter can be a string or array.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "String",
+      "variables": {
+        "incoming": {
+          "str": "$var.e5f.return_data",
+          "stringN": "$var.9635.return_data"
+        },
+        "outgoing": {
+          "combinedStrings": null
+        },
+        "error": "",
+        "decorators": []
+      },
+      "deprecated": false,
+      "groups": [],
+      "actor": "Pronghorn",
+      "x": 0.6614397719173201,
+      "y": 0.5059978189749182,
+      "scheduled": false
+    },
+    "e5f": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Get String 1",
+      "description": "Get string 1",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "pass_on_null": false,
+          "query": "str1",
+          "obj": "$var.job.formData"
+        },
+        "outgoing": {
+          "return_data": null
+        },
+        "error": "",
+        "decorators": []
+      },
+      "deprecated": false,
+      "groups": [],
+      "x": 0.12525458248472504,
+      "y": 0.4946236559139785,
+      "scheduled": false
+    },
+    "ca0f": {
+      "name": "transformation",
+      "canvasName": "transformation",
+      "summary": "concat strings",
+      "description": "Perform a JSON Transformation using the JST library.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "tr_id": "63c581f1c204ad01c1b03507",
+          "variableMap": {
+            "str2": "$var.9635.return_data",
+            "str1": "$var.e5f.return_data"
+          },
+          "options": {
+            "extractOutput": true,
+            "validateIncoming": true,
+            "revertToDefaultValue": true
+          }
+        },
+        "outgoing": {
+          "combinedString": null
+        },
+        "decorators": []
+      },
+      "deprecated": false,
+      "groups": [],
+      "x": 0.42979330007127586,
+      "y": 0.4994547437295529,
+      "task_name": "concat strings",
+      "retrySettings": null
+    }
+  },
+  "transitions": {
+    "2300": {},
+    "9635": {
+      "ca0f": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_start": {
+      "e5f": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "workflow_end": {},
+    "25a": {
+      "workflow_end": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "e5f": {
+      "9635": {
+        "type": "standard",
+        "state": "success"
+      }
+    },
+    "ca0f": {
+      "25a": {
+        "type": "standard",
+        "state": "success"
+      }
+    }
+  },
+  "type": "automation",
+  "canvasVersion": 1,
+  "tags": [],
+  "groups": [],
+  "migrationVersion": 1
+}

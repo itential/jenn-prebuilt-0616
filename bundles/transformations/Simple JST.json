@@ -1,0 +1,60 @@
+{
+  "_id": "63c6f99dc204ad01c1b03509",
+  "name": "Simple JST",
+  "description": "",
+  "incoming": [
+    {
+      "$id": "input",
+      "type": "array"
+    }
+  ],
+  "outgoing": [
+    {
+      "$id": "output1",
+      "type": "object",
+      "properties": {
+        "outputArray": {
+          "type": "array"
+        }
+      },
+      "required": []
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "type": "assign",
+      "from": {
+        "location": "incoming",
+        "name": "input",
+        "ptr": ""
+      },
+      "to": {
+        "location": "outgoing",
+        "name": "output1",
+        "ptr": "/outputArray"
+      },
+      "context": "#"
+    }
+  ],
+  "functions": [],
+  "comments": [],
+  "view": {
+    "col": 3,
+    "row": 5
+  },
+  "created": "2023-01-17T19:40:13.358Z",
+  "createdBy": {
+    "_id": "63c57e1faed840e9c6bb56b2",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "lastUpdated": "2023-01-20T21:27:04.805Z",
+  "lastUpdatedBy": {
+    "_id": "63c57e1faed840e9c6bb56b2",
+    "provenance": "local_aaa",
+    "username": "admin@pronghorn"
+  },
+  "version": "3.23.3-2022.1.14",
+  "tags": []
+}

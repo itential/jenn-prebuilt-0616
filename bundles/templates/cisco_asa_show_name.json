@@ -1,0 +1,16 @@
+{
+  "_id": "63c57dad30bfac026a9a339a",
+  "name": "cisco_asa_show_name",
+  "command": "show name",
+  "template": "Value IP (\\d+.\\d+.\\d+.\\d+)\nValue NAME (\\S+)\n\nStart\n  ^name\\s+${IP}\\s+${NAME}\\s* -> Record",
+  "type": "textfsm",
+  "created": "2023-01-16T16:39:09.906Z",
+  "lastUpdated": "2023-01-16T16:39:09.906Z",
+  "version": 1,
+  "data": "name 10.1.1.1 server\nname 10.1.1.10 server1\nname 10.1.10.1 server-1\nname 10.1.1.1 server_1\nname 10.10.1.1 server_web\nname 10.1.10.10 server-db\nname 10.10.1.10 server_web1\nname 10.10.10.10 server-web1\nname 10.1.1.100 1server\nname 10.1.100.100 1-server\nname 10.100.1.100 1_server\nname 10.100.100.100 server2\n",
+  "group": "cisco asa",
+  "description": "Auto-imported",
+  "tags": [],
+  "createdBy": null,
+  "lastUpdatedBy": null
+}
