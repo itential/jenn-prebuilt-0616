@@ -1,0 +1,972 @@
+{
+  "metadata": {
+    "name": "@local/concat-two-strings-prebuilt",
+    "version": "0.0.2",
+    "description": "This is my first prebuilt that's pushed to Azure",
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "gitlab",
+      "hostname": "gitlab.com",
+      "path": "itentialopensource/pre-built-automations"
+    },
+    "keywords": [
+      "Itential",
+      "IAP",
+      "artifacts"
+    ],
+    "author": "Itential Automation Platform",
+    "IAPDependencies": {
+      "@itential/app-workflow_engine": "",
+      "@itential/app-json_forms": "",
+      "@itential/app-operations_manager": "",
+      "@itential/app-mop": "",
+      "@itential/app-template_builder": "",
+      "@itential/app-configuration_manager": ""
+    }
+  },
+  "manifest": {
+    "bundleName": "@local/concat-two-strings-prebuilt",
+    "fingerprint": "648c59ee05b974064cd350c9",
+    "createdEpoch": "1686919662650",
+    "artifacts": [
+      {
+        "id": "Concat Two Strings",
+        "name": "Concat Two Strings",
+        "type": "automation",
+        "location": "/bundles/automations/Concat Two Strings.json",
+        "properties": {
+          "entryPoint": false
+        }
+      },
+      {
+        "id": "concat-two-strings",
+        "name": "concat-two-strings",
+        "type": "workflow",
+        "location": "/bundles/workflows/concat-two-strings.json",
+        "properties": {
+          "entryPoint": false
+        }
+      },
+      {
+        "id": "all-components-workflow",
+        "name": "all-components-workflow",
+        "type": "workflow",
+        "location": "/bundles/workflows/all-components-workflow.json",
+        "properties": {
+          "entryPoint": false
+        }
+      },
+      {
+        "id": "concat-two-strings-form",
+        "name": "concat-two-strings-form",
+        "type": "json-forms",
+        "location": "/bundles/json_forms/concat-two-strings-form.json",
+        "properties": {
+          "entryPoint": false
+        }
+      },
+      {
+        "id": "cisco_asa_show_name",
+        "name": "cisco_asa_show_name",
+        "type": "template",
+        "location": "/bundles/templates/cisco_asa_show_name.json",
+        "properties": {
+          "entryPoint": false
+        }
+      },
+      {
+        "id": "simple-template",
+        "name": "simple-template",
+        "type": "mop-template",
+        "location": "/bundles/mop_templates/simple-template.json",
+        "properties": {
+          "entryPoint": false
+        }
+      },
+      {
+        "id": "simple-gc",
+        "name": "simple-gc",
+        "type": "golden-config",
+        "location": "/bundles/ucm_golden_configs/simple-gc.json",
+        "properties": {
+          "entryPoint": false
+        }
+      },
+      {
+        "id": "63c581f1c204ad01c1b03507",
+        "name": "concat strings",
+        "type": "transformation",
+        "location": "/bundles/transformations/concat strings.json",
+        "properties": {
+          "entryPoint": false
+        }
+      },
+      {
+        "id": "63c6f99dc204ad01c1b03509",
+        "name": "Simple JST",
+        "type": "transformation",
+        "location": "/bundles/transformations/Simple JST.json",
+        "properties": {
+          "entryPoint": false
+        }
+      }
+    ]
+  },
+  "bundles": [
+    {
+      "type": "automation",
+      "data": {
+        "_id": "64650ee981a6f5025951bc54",
+        "name": "Concat Two Strings",
+        "description": "",
+        "componentName": "concat-two-strings",
+        "componentType": "workflows",
+        "gbac": {
+          "write": [],
+          "read": []
+        },
+        "created": "2023-05-17T17:29:13.352Z",
+        "createdBy": "admin@pronghorn",
+        "lastUpdated": "2023-05-17T17:29:13.352Z",
+        "lastUpdatedBy": "admin@pronghorn",
+        "triggers": [
+          {
+            "_id": "64650ee981a6f5025951bc55",
+            "name": "Manual Trigger",
+            "type": "manual",
+            "enabled": true,
+            "actionType": "automations",
+            "actionId": "64650ee981a6f5025951bc54",
+            "description": "",
+            "formId": "concat-two-strings-form",
+            "formData": null,
+            "formSchemaHash": "c21cfea430342258c386c92124582add253b34735979bc79408d67f224d3042c",
+            "created": "2023-05-17T17:29:13.846Z",
+            "createdBy": "admin@pronghorn",
+            "lastUpdated": "2023-05-17T17:29:13.846Z",
+            "lastUpdatedBy": "admin@pronghorn",
+            "migrationVersion": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "workflow",
+      "data": {
+        "created": "2022-12-08T15:33:10.144Z",
+        "createdVersion": "5.40.5-2021.1.109.0",
+        "created_by": {
+          "provenance": "CloudAAA",
+          "username": "jenn.lu@itential.com",
+          "firstname": "Jenn",
+          "inactive": true
+        },
+        "font_size": 12,
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "formData": {
+              "title": "obj",
+              "type": "object",
+              "properties": {},
+              "examples": [
+                {
+                  "name": "value"
+                }
+              ]
+            }
+          },
+          "required": [
+            "formData"
+          ]
+        },
+        "lastUpdatedVersion": "5.44.64-2022.1.27.0",
+        "last_updated": "2023-05-18T20:45:08.817Z",
+        "last_updated_by": {
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn",
+          "firstname": "admin",
+          "inactive": false
+        },
+        "name": "concat-two-strings",
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "formData": {
+              "title": "obj",
+              "type": "object",
+              "properties": {},
+              "examples": [
+                {
+                  "name": "value"
+                }
+              ]
+            },
+            "_id": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{24}$"
+            },
+            "initiator": {
+              "type": "string"
+            }
+          }
+        },
+        "preAutomationTime": 0,
+        "sla": 0,
+        "tasks": {
+          "9635": {
+            "name": "query",
+            "canvasName": "query",
+            "summary": "Get String 2",
+            "description": "Get string 2",
+            "location": "Application",
+            "locationType": null,
+            "app": "WorkFlowEngine",
+            "type": "operation",
+            "displayName": "WorkFlowEngine",
+            "variables": {
+              "incoming": {
+                "pass_on_null": false,
+                "query": "str2",
+                "obj": "$var.job.formData"
+              },
+              "outgoing": {
+                "return_data": null
+              },
+              "error": "",
+              "decorators": []
+            },
+            "deprecated": false,
+            "groups": [],
+            "x": 0.28011404133998574,
+            "y": 0.504907306434024,
+            "scheduled": false
+          },
+          "workflow_start": {
+            "name": "workflow_start",
+            "groups": [],
+            "x": 0,
+            "y": 0.5
+          },
+          "workflow_end": {
+            "name": "workflow_end",
+            "groups": [],
+            "x": 1.0192444761225945,
+            "y": 0.5081788440567067
+          },
+          "25a": {
+            "name": "stringConcat",
+            "canvasName": "concat",
+            "summary": "Concatenates strings together.",
+            "description": "Concatenates a string with a second string(s). The second parameter can be a string or array.",
+            "location": "Application",
+            "locationType": null,
+            "app": "WorkFlowEngine",
+            "type": "automatic",
+            "displayName": "String",
+            "variables": {
+              "incoming": {
+                "str": "$var.e5f.return_data",
+                "stringN": "$var.9635.return_data"
+              },
+              "outgoing": {
+                "combinedStrings": null
+              },
+              "error": "",
+              "decorators": []
+            },
+            "deprecated": false,
+            "groups": [],
+            "actor": "Pronghorn",
+            "x": 0.6614397719173201,
+            "y": 0.5059978189749182,
+            "scheduled": false
+          },
+          "e5f": {
+            "name": "query",
+            "canvasName": "query",
+            "summary": "Get String 1",
+            "description": "Get string 1",
+            "location": "Application",
+            "locationType": null,
+            "app": "WorkFlowEngine",
+            "type": "operation",
+            "displayName": "WorkFlowEngine",
+            "variables": {
+              "incoming": {
+                "pass_on_null": false,
+                "query": "str1",
+                "obj": "$var.job.formData"
+              },
+              "outgoing": {
+                "return_data": null
+              },
+              "error": "",
+              "decorators": []
+            },
+            "deprecated": false,
+            "groups": [],
+            "x": 0.12525458248472504,
+            "y": 0.4946236559139785,
+            "scheduled": false
+          },
+          "ca0f": {
+            "name": "transformation",
+            "canvasName": "transformation",
+            "summary": "concat strings",
+            "description": "Perform a JSON Transformation using the JST library.",
+            "location": "Application",
+            "locationType": null,
+            "app": "WorkFlowEngine",
+            "type": "operation",
+            "displayName": "WorkFlowEngine",
+            "variables": {
+              "incoming": {
+                "tr_id": "63c581f1c204ad01c1b03507",
+                "variableMap": {
+                  "str2": "$var.9635.return_data",
+                  "str1": "$var.e5f.return_data"
+                },
+                "options": {
+                  "extractOutput": true,
+                  "validateIncoming": true,
+                  "revertToDefaultValue": true
+                }
+              },
+              "outgoing": {
+                "combinedString": null
+              },
+              "decorators": []
+            },
+            "deprecated": false,
+            "groups": [],
+            "x": 0.42979330007127586,
+            "y": 0.4994547437295529,
+            "task_name": "concat strings",
+            "retrySettings": null
+          }
+        },
+        "transitions": {
+          "2300": {},
+          "9635": {
+            "ca0f": {
+              "type": "standard",
+              "state": "success"
+            }
+          },
+          "workflow_start": {
+            "e5f": {
+              "type": "standard",
+              "state": "success"
+            }
+          },
+          "workflow_end": {},
+          "25a": {
+            "workflow_end": {
+              "type": "standard",
+              "state": "success"
+            }
+          },
+          "e5f": {
+            "9635": {
+              "type": "standard",
+              "state": "success"
+            }
+          },
+          "ca0f": {
+            "25a": {
+              "type": "standard",
+              "state": "success"
+            }
+          }
+        },
+        "type": "automation",
+        "canvasVersion": 1,
+        "tags": [],
+        "groups": [],
+        "migrationVersion": 1
+      }
+    },
+    {
+      "type": "workflow",
+      "data": {
+        "name": "all-components-workflow",
+        "type": "automation",
+        "tasks": {
+          "workflow_start": {
+            "name": "workflow_start",
+            "groups": [],
+            "x": 0,
+            "y": 0.5
+          },
+          "workflow_end": {
+            "name": "workflow_end",
+            "groups": [],
+            "x": 1,
+            "y": 0.5
+          },
+          "6d19": {
+            "name": "RunCommandTemplate",
+            "canvasName": "RunCommandTemplate",
+            "summary": "Run Command Template",
+            "description": "Run a Command Template against devices.",
+            "location": "Application",
+            "locationType": null,
+            "app": "MOP",
+            "type": "automatic",
+            "displayName": "MOP",
+            "variables": {
+              "incoming": {
+                "template": "simple-template",
+                "variables": {},
+                "devices": [
+                  "device1"
+                ]
+              },
+              "outgoing": {
+                "mop_template_results": null
+              },
+              "error": "",
+              "decorators": []
+            },
+            "deprecated": false,
+            "groups": [],
+            "actor": "Pronghorn",
+            "x": 0.2336911643270025,
+            "y": 0.49944258639910816,
+            "scheduled": false
+          },
+          "70c6": {
+            "name": "transformation",
+            "canvasName": "transformation",
+            "summary": "Simple JST",
+            "description": "Perform a JSON Transformation using the JST library.",
+            "location": "Application",
+            "locationType": null,
+            "app": "WorkFlowEngine",
+            "type": "operation",
+            "displayName": "WorkFlowEngine",
+            "variables": {
+              "incoming": {
+                "tr_id": "63c6f99dc204ad01c1b03509",
+                "variableMap": {
+                  "input": ""
+                },
+                "options": {
+                  "extractOutput": true,
+                  "validateIncoming": true,
+                  "revertToDefaultValue": true
+                }
+              },
+              "outgoing": {
+                "output1": null
+              },
+              "decorators": []
+            },
+            "deprecated": false,
+            "groups": [],
+            "x": 0.4004954582989265,
+            "y": 0.49944258639910816,
+            "task_name": "Simple JST",
+            "retrySettings": null
+          },
+          "788c": {
+            "name": "renderJinja2",
+            "canvasName": "renderJinja2",
+            "summary": "Renders a jinja2 template.",
+            "description": "Takes a jinja2 template a renders output text.",
+            "location": "Application",
+            "locationType": null,
+            "app": "ConfigurationManager",
+            "type": "automatic",
+            "displayName": "ConfigurationManager",
+            "variables": {
+              "incoming": {
+                "template": "simple-jinja",
+                "variables": {},
+                "options": {}
+              },
+              "outgoing": {
+                "results": null
+              },
+              "error": "",
+              "decorators": []
+            },
+            "deprecated": false,
+            "groups": [],
+            "actor": "Pronghorn",
+            "x": 0.5656482246077622,
+            "y": 0.49944258639910816,
+            "scheduled": false
+          },
+          "bac1": {
+            "name": "applyTemplate",
+            "canvasName": "applyTemplate",
+            "summary": "Apply a template to text",
+            "description": "Apply a template to parse text",
+            "location": "Application",
+            "locationType": null,
+            "app": "TemplateBuilder",
+            "type": "automatic",
+            "displayName": "TemplateBuilder",
+            "variables": {
+              "incoming": {
+                "text": "name 10.1.1.1 server\\nname 10.1.1.10 server1\\nname 10.1.10.1 server-1\\nname 10.1.1.1 server_1\\nname 10.10.1.1 server_web\\nname 10.1.10.10 server-db\\nname 10.10.1.10 server_web1\\nname 10.10.10.10 server-web1\\nname 10.1.1.100 a1server\\nname 10.1.100.100 1-server\\nname 10.100.1.100 1_server\\nname 10.100.100.100 server2\\n",
+                "template": "cisco_asa_show_name"
+              },
+              "outgoing": {
+                "parsed": null
+              },
+              "error": "",
+              "decorators": []
+            },
+            "deprecated": false,
+            "groups": [],
+            "actor": "Pronghorn",
+            "x": 0.7341040462427746,
+            "y": 0.48717948717948717,
+            "scheduled": false
+          },
+          "2c7d": {
+            "name": "runComplianceForTree",
+            "canvasName": "runComplianceForTree",
+            "summary": "Run Compliance Reports (Tree)",
+            "description": "Begin a compliance report run for a Golden Config tree.",
+            "location": "Application",
+            "locationType": null,
+            "app": "ConfigurationManager",
+            "type": "automatic",
+            "displayName": "ConfigurationManager",
+            "variables": {
+              "incoming": {
+                "treeId": "63cb0846d2db82016972474e",
+                "version": "initial",
+                "variables": "",
+                "grading": ""
+              },
+              "outgoing": {
+                "runComplianceBatchResult": null
+              },
+              "error": "",
+              "decorators": []
+            },
+            "deprecated": false,
+            "groups": [],
+            "actor": "Pronghorn",
+            "x": 0.8967795210569777,
+            "y": 0.5016722408026756,
+            "scheduled": false
+          }
+        },
+        "transitions": {
+          "workflow_start": {
+            "6d19": {
+              "type": "standard",
+              "state": "success"
+            }
+          },
+          "workflow_end": {},
+          "6d19": {
+            "70c6": {
+              "type": "standard",
+              "state": "success"
+            }
+          },
+          "70c6": {
+            "788c": {
+              "type": "standard",
+              "state": "success"
+            }
+          },
+          "788c": {
+            "bac1": {
+              "type": "standard",
+              "state": "success"
+            }
+          },
+          "bac1": {
+            "2c7d": {
+              "type": "standard",
+              "state": "success"
+            }
+          },
+          "2c7d": {
+            "workflow_end": {
+              "type": "standard",
+              "state": "success"
+            }
+          }
+        },
+        "font_size": 12,
+        "last_updated": "2023-05-17T18:15:42.296Z",
+        "last_updated_by": {
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn",
+          "firstname": "admin",
+          "inactive": false
+        },
+        "lastUpdatedVersion": "5.44.64-2022.1.27.0",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "_id": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{24}$"
+            },
+            "initiator": {
+              "type": "string"
+            }
+          }
+        },
+        "created": "2023-01-20T21:24:14.731Z",
+        "created_by": {
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn",
+          "firstname": "admin",
+          "inactive": false
+        },
+        "createdVersion": "5.44.64-2022.1.25.0",
+        "tags": [],
+        "groups": [],
+        "migrationVersion": 1
+      }
+    },
+    {
+      "type": "json-forms",
+      "data": {
+        "id": "646505b787a15301f80b498d",
+        "created": "2023-05-17T16:49:59.576Z",
+        "createdBy": "admin@pronghorn",
+        "lastUpdated": "2023-05-17T17:30:37.448Z",
+        "lastUpdatedBy": "admin@pronghorn",
+        "name": "concat-two-strings-form",
+        "description": null,
+        "struct": {
+          "type": "object",
+          "description": "",
+          "items": [
+            {
+              "nodeId": "b69e4ae9-4d83-48c5-bbe9-d628d69177f5",
+              "type": "string",
+              "title": "str1",
+              "description": "",
+              "placeholder": "Enter text",
+              "required": false,
+              "readOnly": false,
+              "binding": false,
+              "rel": "item",
+              "targetPointer": "/default"
+            },
+            {
+              "nodeId": "54d6c365-9097-4b7f-8ccc-cdd6d1b9965f",
+              "type": "string",
+              "title": "str2",
+              "description": "",
+              "placeholder": "Enter text",
+              "required": false,
+              "readOnly": false,
+              "binding": false,
+              "rel": "item",
+              "targetPointer": "/default"
+            }
+          ]
+        },
+        "schema": {
+          "title": "concat-two-strings-form",
+          "description": "",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "str1": {
+              "type": "string",
+              "title": "str1",
+              "_id": "/properties/str1",
+              "description": ""
+            },
+            "str2": {
+              "type": "string",
+              "title": "str2",
+              "_id": "/properties/str2",
+              "description": ""
+            }
+          }
+        },
+        "uiSchema": {
+          "str1": {
+            "ui:placeholder": "Enter text"
+          },
+          "str2": {
+            "ui:placeholder": "Enter text"
+          }
+        },
+        "bindingSchema": {},
+        "validationSchema": {},
+        "version": "2020.1"
+      }
+    },
+    {
+      "type": "template",
+      "data": {
+        "_id": "63c57dad30bfac026a9a339a",
+        "name": "cisco_asa_show_name",
+        "command": "show name",
+        "template": "Value IP (\\d+.\\d+.\\d+.\\d+)\nValue NAME (\\S+)\n\nStart\n  ^name\\s+${IP}\\s+${NAME}\\s* -> Record",
+        "type": "textfsm",
+        "created": "2023-01-16T16:39:09.906Z",
+        "lastUpdated": "2023-01-16T16:39:09.906Z",
+        "version": 1,
+        "data": "name 10.1.1.1 server\nname 10.1.1.10 server1\nname 10.1.10.1 server-1\nname 10.1.1.1 server_1\nname 10.10.1.1 server_web\nname 10.1.10.10 server-db\nname 10.10.1.10 server_web1\nname 10.10.10.10 server-web1\nname 10.1.1.100 1server\nname 10.1.100.100 1-server\nname 10.100.1.100 1_server\nname 10.100.100.100 server2\n",
+        "group": "cisco asa",
+        "description": "Auto-imported",
+        "tags": [],
+        "createdBy": null,
+        "lastUpdatedBy": null
+      }
+    },
+    {
+      "type": "mop-template",
+      "data": {
+        "tags": [],
+        "name": "simple-template",
+        "os": "",
+        "passRule": true,
+        "ignoreWarnings": false,
+        "commands": [
+          {
+            "command": "echo",
+            "passRule": true,
+            "rules": [
+              {
+                "rule": "",
+                "eval": "contains",
+                "severity": "error"
+              }
+            ]
+          }
+        ],
+        "created": 1674249911834,
+        "createdBy": "admin@pronghorn",
+        "lastUpdated": 1674249920018,
+        "lastUpdatedBy": "admin@pronghorn"
+      }
+    },
+    {
+      "type": "golden-config",
+      "data": {
+        "status": "success",
+        "data": [
+          {
+            "_id": "63cb0846d2db82016972474f",
+            "name": "simple-gc",
+            "treeId": "63cb0846d2db82016972474e",
+            "version": "initial",
+            "deviceType": "a10-acos",
+            "root": {
+              "name": "base",
+              "attributes": {
+                "devices": [],
+                "remediationWorkflow": null,
+                "configId": "63cb0846d2db82016972474d",
+                "export": {
+                  "_id": "63cb0846d2db82016972474d",
+                  "deviceType": "a10-acos",
+                  "lines": [],
+                  "template": "",
+                  "created": "2023-01-20T21:31:49.772Z",
+                  "createdBy": "63c57e1faed840e9c6bb56b2",
+                  "lastUpdated": "2023-01-20T21:31:49.772Z",
+                  "lastUpdatedBy": "63c57e1faed840e9c6bb56b2"
+                }
+              },
+              "children": []
+            },
+            "created": "2023-01-20T21:31:49.771Z",
+            "createdBy": "63c57e1faed840e9c6bb56b2",
+            "lastUpdated": "2023-01-20T21:31:49.771Z",
+            "lastUpdatedBy": "63c57e1faed840e9c6bb56b2",
+            "gbac": {
+              "read": [],
+              "write": []
+            },
+            "variables": {},
+            "tags": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "transformation",
+      "data": {
+        "_id": "63c581f1c204ad01c1b03507",
+        "name": "concat strings",
+        "description": "",
+        "incoming": [
+          {
+            "$id": "str2",
+            "type": "string"
+          },
+          {
+            "$id": "str1",
+            "type": "string"
+          }
+        ],
+        "outgoing": [
+          {
+            "$id": "combinedString",
+            "type": "string"
+          }
+        ],
+        "steps": [
+          {
+            "id": 1,
+            "type": "method",
+            "library": "String",
+            "method": "concat",
+            "args": [
+              null,
+              null
+            ],
+            "view": {
+              "row": 1,
+              "col": 2
+            },
+            "context": "#"
+          },
+          {
+            "id": 2,
+            "type": "assign",
+            "from": {
+              "location": "incoming",
+              "name": "str2",
+              "ptr": ""
+            },
+            "to": {
+              "location": "method",
+              "name": 1,
+              "ptr": "/args/0/value"
+            },
+            "context": "#"
+          },
+          {
+            "id": 3,
+            "type": "assign",
+            "from": {
+              "location": "incoming",
+              "name": "str1",
+              "ptr": ""
+            },
+            "to": {
+              "location": "method",
+              "name": 1,
+              "ptr": "/args/1/value"
+            },
+            "context": "#"
+          },
+          {
+            "id": 4,
+            "type": "assign",
+            "from": {
+              "location": "method",
+              "name": 1,
+              "ptr": "/return"
+            },
+            "to": {
+              "location": "outgoing",
+              "name": "combinedString",
+              "ptr": ""
+            },
+            "context": "#"
+          }
+        ],
+        "functions": [],
+        "comments": [],
+        "view": {
+          "col": 3,
+          "row": 5
+        },
+        "created": "2023-01-16T16:57:21.662Z",
+        "createdBy": {
+          "_id": "63c57e1faed840e9c6bb56b2",
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn"
+        },
+        "lastUpdated": "2023-01-19T14:37:40.560Z",
+        "lastUpdatedBy": {
+          "_id": "63c57e1faed840e9c6bb56b2",
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn"
+        },
+        "version": "3.23.3-2022.1.12",
+        "tags": []
+      }
+    },
+    {
+      "type": "transformation",
+      "data": {
+        "_id": "63c6f99dc204ad01c1b03509",
+        "name": "Simple JST",
+        "description": "",
+        "incoming": [
+          {
+            "$id": "input",
+            "type": "array"
+          }
+        ],
+        "outgoing": [
+          {
+            "$id": "output1",
+            "type": "object",
+            "properties": {
+              "outputArray": {
+                "type": "array"
+              }
+            },
+            "required": []
+          }
+        ],
+        "steps": [
+          {
+            "id": 1,
+            "type": "assign",
+            "from": {
+              "location": "incoming",
+              "name": "input",
+              "ptr": ""
+            },
+            "to": {
+              "location": "outgoing",
+              "name": "output1",
+              "ptr": "/outputArray"
+            },
+            "context": "#"
+          }
+        ],
+        "functions": [],
+        "comments": [],
+        "view": {
+          "col": 3,
+          "row": 5
+        },
+        "created": "2023-01-17T19:40:13.358Z",
+        "createdBy": {
+          "_id": "63c57e1faed840e9c6bb56b2",
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn"
+        },
+        "lastUpdated": "2023-01-20T21:27:04.805Z",
+        "lastUpdatedBy": {
+          "_id": "63c57e1faed840e9c6bb56b2",
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn"
+        },
+        "version": "3.23.3-2022.1.14",
+        "tags": []
+      }
+    }
+  ],
+  "readme": "<!-- This is a comment in md (Markdown) format, it will not be visible to the end user -->\n\n<!-- Update the below line with your Pre-Built name -->\n# Pre-Built Name\n\n<!-- Leave TOC intact unless you've added or removed headers -->\n\n## Table of Contents\n\n- [Pre-Built Name](#pre-built-name)\n  - [Table of Contents](#table-of-contents)\n  - [Overview](#overview)\n  - [Supported IAP Versions](#supported-iap-versions)\n  - [Getting Started](#getting-started)\n    - [Prerequisites](#prerequisites)\n    - [Capabilities](#capabilities)\n    - [How to Install](#how-to-install)\n    - [Testing](#testing)\n  - [Using this Pre-Built](#using-this-pre-built)\n    - [Input Schema](#input-schema)\n    - [Output Schema](#output-schema)\n  - [Additional Information](#additional-information)\n\n<!-- Write a few sentences about the Pre-Built and explain the use case(s) -->\n\n## Overview\n\nThe **Pre-Built Name** pre-built is used for a repeatable task to automate your network operations.\n\n- Estimated Run Time: < 1 minute\n\n<!-- Update version for relevant major IAP release -->\n\n## Supported IAP Versions\n\nItential pre-builts are built and tested on particular versions of IAP. In addition, pre-builts that work with devices are often dependent on certain orchestration systems (e.g. NSO and IAG). As such, these pre-builts will have dependencies on these other systems. This version of the IAG Update Device Details pre-built has been tested with:\n\n- IAP 2022.1.x\n\n## Getting Started\n\nThese instructions will help you get a copy of the pre-built in your IAP instance for testing in your environment. Reading this section is also helpful for deployments as it provides you with pertinent information on prerequisites and capabilities.\n\n<!-- List any IAP version, adapters, or other dependencies needed to run this pre-built -->\n\n### Prerequisites\n\nUsers must satisfy the following prerequisites to install and run this pre-built:\n\n- Itential Automation Platform\n  - `^2022.1.x`\n- An instantiated adapter\n\n<!-- List capabilities of the pre-built -->\n\n### Capabilities\n\n- Does operation in external system\n- Provides option to run with no manual tasks shown in job with auto approve\n\n<!-- Link to documentation for pre-built installation related major verison of IAP -->\n\n### How to Install\n\nTo install this pre-built:\n\n- Verify that you are running the documented [prerequisites](#prerequisites) in order to install the pre-built.\n\n- Follow the instructions on the Itential Documentation site for [importing a pre-built](https://docs.itential.com/docs/importing-a-prebuilt-2).\n\n### Testing\n\nWhile Itential tests this pre-built and its capabilities, it is often the case the customer environments offer their own unique circumstances. Therefore, it is our recommendation that you deploy this pre-built into a development/testing environment in which you can test the pre-built.\n\n<!-- Explain the main entrypoint(s) for this Pre-Built: Automation Catalog item, Workflow, Postman, etc. -->\n\n## Using this Pre-Built\n\nThis pre-built can be run in a [childJob task](https://docs.itential.com/docs/childjob-1).\n\n**Note**: The entry point workflow to this pre-built is called `Pre-Built Workflow`. Use this workflow name if running this pre-built in a childJob task.\n\nThe input to and possible outputs from this pre-built are described here.\n\n<!-- Provide example input to pre-built as well as show table of what each property is regarding data type, if required, and a description -->\n\n### Input Schema\n\nExample input:\n\n```json\n{}\n```\n\nThe following table details the property keys of the  input object.\n| key                                      | type    | required | description                                             |\n|------------------------------------------|---------|----------|---------------------------------------------------------|\n\n\n<!-- Provide example input to pre-built as well as show table of what each property is regarding data type, if required, and a description -->\n\n### Output Schema\n\nThe `preBuiltResponse` job variable returned from the run pre-built workflow `Pre-Built Workflow` provides the reponse of the pre-built.\n\nSee an example output below.\n\n```json\n{}\n```\n\nThe `preBuiltError` job variable returned from the pre-built workflow `Pre-Built Workflow` provides the error response.\n\nSee an example output for this job variable when an error occurs.\n\n```json\n{}\n```\n\n## Additional Information\n\nPlease use your Itential Customer Success account if you need support when using this pre-built.\n"
+}
